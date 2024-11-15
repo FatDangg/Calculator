@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="stylesheet.css">
-<link rel="shortcut icon" type="image/x-icon" href="favicon (1).ico">
 <html>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon (1).ico">
     <style>
         #background{
             background-color: #c6e7ff;
@@ -9,6 +9,7 @@
             top: -1%;
             left: -1%;
             position: fixed;
+            transition: background 1.5s;
         }
         #calculator {
             width: 320px;
@@ -20,6 +21,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             top: 20%;
             left: 37%;
+            transition: background 1.5s;
         }
         #display {
             background-color: #eea8d8;
@@ -30,7 +32,7 @@
             border-radius: 10px;
             margin-bottom: 20px;
             font-family: Digital-7;
-            transition: background 0.3s;
+            transition: background 1.5s;
         }
         #buttons {
             display: grid;
@@ -46,7 +48,7 @@
             border-radius: 10px;
             border: none;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 2s;
         }
 
         .btn:hover {
@@ -61,7 +63,7 @@
             border-radius: 10px;
             border: none;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 2s;
             grid-column: span 2;
         }
         #equals:hover{
@@ -82,7 +84,7 @@
             font-size: 1rem;
             background-color: #888;
             color: white;
-            transition: background 0.3s;
+            transition: background 2s;
         }
         #skin-btn:hover {
             background-color: #666;
@@ -251,18 +253,15 @@
     }
     }
     function addDecimal(){
-    // Check if there's already a decimal point in the current display
     console.log('go in1');
     if (!decimalAdded) {
         console.log('go in2');
         if (awaitingSecondNumber) {
             console.log('go in3');
-            // Start fresh if awaiting a new operand, set initial value to '0.'
             document.getElementById('display').innerHTML = "0.";
             value = 0;
             awaitingSecondNumber = false;
         } else {
-            // Append a decimal point to the display content
             console.log('go in4');
             document.getElementById('display').innerHTML = document.getElementById('display').innerHTML+ ".";
         }
